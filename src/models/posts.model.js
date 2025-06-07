@@ -24,6 +24,8 @@ const updDateById = async (id, categoria, descripcion, fecha, titulo) => {
 }
 
 const deleteById = async (id) => {
-    const [result] = await db.query ('DELETE * FROM post WHERE id = ?', [id]);
+    const [result] = await db.query ('DELETE * FROM posts WHERE id = ?', [id]);
     return result; 
 }
+
+module.exports = { getAll, getById, create, updDateById, deleteById}
