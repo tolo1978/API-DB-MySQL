@@ -1,7 +1,12 @@
 const express = require('express');
+const cors = require('cors');
+
 
 const app = express();
 app.use(express.json());
+app.use(cors());
+
+// AÑADIR ROUTER
 
 // 404 handler
 app.use((req, res, next) => {
