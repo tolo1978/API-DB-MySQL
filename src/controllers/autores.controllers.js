@@ -33,11 +33,22 @@ const create = async (req, res) => {
 }
 
 const deleteById = async (req, res) => {
+    const idUser = req.params.id;
+
+    const deleteUser = await autores.deleteById(idUser);
+
+    res.json(deleteUser);
 
 }
 
 
 const updDateById = async (req, res) => {
+    const id = req.params.id;
+    const data = req.body;
+
+    const upDateUser = await autores.updDateById(id, data);
+
+    res.json(upDateUser);
 
 }
 
