@@ -24,7 +24,7 @@ const deleteById = async (id) => {
     return result;
 }
 
-const updDateById = async (id, {nombre, email, imagen}) => {
+const updDateById = async (id, {nombre, email, imagen}) => { // {} lo metemos en un objeto
     const [result] = await db.query ('UPDATE autores SET nombre = ?, email = ?, imagen = ? WHERE id = ?', [nombre, email, imagen, id]);
     return result;
 }
