@@ -1,7 +1,7 @@
 const autores = require ('../models/autores.model');
 
 const getAll = async (req, res) => {
-    const {page = 1, limit = 10} = req.query;
+    const {page = 1, limit = 10} = req.query; // .query oara peticiones get
 
     const allAutores = await autores.getAll(page, limit);
 
@@ -13,7 +13,7 @@ const getAll = async (req, res) => {
 }
 
 const getById = async (req, res) => {
-    const idUser = req.query.id;
+    const idUser = req.query.id; // .query oara peticiones get
 
     const user = await autores.getById(idUser);
 
@@ -24,16 +24,16 @@ const getById = async (req, res) => {
 }
 
 const create = async (req, res) => {
-    const {nombre, email, imagen} = req.body;
+    const {nombre, email, imagen} = req.body; // .body datos en el cuerpo de la peticion  post
 
-    const insert = await autores.create({nombre, email, imagen});
+    const insert = await autores.create({nombre, email, imagen}); 
 
     res.json(insert);
 
 }
 
 const deleteById = async (req, res) => {
-    const idUser = req.params.id;
+    const idUser = req.params.id; // .params para peticiones GET, PUT, DELETE, como por ejemnplo la parte de la url
 
     const deleteUser = await autores.deleteById(idUser);
 
@@ -43,8 +43,8 @@ const deleteById = async (req, res) => {
 
 
 const updDateById = async (req, res) => {
-    const id = req.params.id;
-    const data = req.body;
+    const id = req.params.id; // Preguntar a Mario
+    const data = req.body; // Preguntar a Mario
 
     const upDateUser = await autores.updDateById(id, data);
 
