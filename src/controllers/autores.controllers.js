@@ -13,7 +13,7 @@ const getAll = async (req, res) => {
 }
 
 const getById = async (req, res) => {
-    const idUser = req.query.id; // .query oara peticiones get
+    const idUser = req.query.id; // .query para peticiones get
 
     const user = await autores.getById(idUser);
 

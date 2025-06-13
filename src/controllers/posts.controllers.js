@@ -51,12 +51,19 @@ const deleteById = async (req, res) => {
 
 const getPostByAutor = async (req, res) => {
     const idAutor = req.query.id_autor
-    const postAutor = await posts.getPostByAutor(idAutor);
+    const page = req.query.page ? req.query.page : 1; 
+    const limit = req.query.limit ? req.query.limit : 10; 
+
+    const postAutor = await posts.getAllByAutor(page, limit, idAutor,);
 
     if (postAutor === null) {
         res.status(400).json({errorMsg: "El autor no tiene post"})
     }
-   res.json(postAutor);
+    res.json({
+        page,
+        limit,
+        results: postAutor
+    });
 }
 
 module.exports = { getAll, getById, create, upDateById, deleteById, getPostByAutor}
