@@ -6,7 +6,7 @@ const { getAll, getById, create, upDateById, deleteById, getPostByAutor} = requi
 
 router.get('/', getAll);
 router.get('/:id', checkPostId, getById);
-router.get('/', getPostByAutor);
+router.get('/autor/:idAutor', getPostByAutor); //idautor --> viene del controller del método getPostByAutor y tiene que ser exacto
 
 router.post('/', create);
 router.put('/:id', checkPostId, upDateById);

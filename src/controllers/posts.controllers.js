@@ -54,7 +54,7 @@ const getPostByAutor = async (req, res) => {
     const page = req.query.page ? req.query.page : 1; 
     const limit = req.query.limit ? req.query.limit : 10; 
 
-    const postAutor = await posts.getAllByAutor(page, limit, idAutor,);
+    const postAutor = await posts.getAllByAutor(page, limit, idAutor);
 
     if (postAutor === null) {
         res.status(400).json({errorMsg: "El autor no tiene post"})

@@ -8,6 +8,9 @@ app.use(cors());
 
 // AÑADIR ROUTER
 
+app.use('/api', require('./routes/api.routes'));
+
+
 // 404 handler
 app.use((req, res, next) => {
     res.status(404).json({
