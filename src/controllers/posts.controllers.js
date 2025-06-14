@@ -13,8 +13,8 @@ const getAll = async () => {
 
 }
 const getById = async (req, res) => {
-    const id = req.query.id;
-    const postById = await posts.getByIdI(id);
+    const id = req.query.id; // Preguntar a Mario, porque query no params. Query --> /usuarios?id=34 -- params --> /usuarios/35
+    const postById = await posts.getById(id);
 
     if (postById === null) {
         res.status(404).json({ errMsg: "El post no existe" })
